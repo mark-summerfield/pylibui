@@ -14,19 +14,16 @@ class MyWindow(Window):
         app.stop()
 
 
-app = App()
+with App():
 
-window = MyWindow('Window', 800, 600)
-window.setMargined(1)
+    window = MyWindow('Window', 800, 600)
+    window.setMargined(1)
 
-vbox = VerticalBox()
-vbox.setPadded(1)
-window.setChild(vbox)
+    vbox = VerticalBox()
+    vbox.setPadded(1)
+    window.setChild(vbox)
 
-vbox.append(Label('Hello World!'))
-vbox.append(Label('Goodbye World!'))
+    vbox.append(Label('Hello World!'))
+    vbox.append(Label('Goodbye World!'))
 
-window.show()
-
-app.start()
-app.close()
+    window.show()
